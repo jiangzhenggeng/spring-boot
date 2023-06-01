@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.dao.UserDao">
+    <!--    <resultMap id="UserResultMap" type="com.exam.domain.User" >-->
+
+    <!--    </resultMap>-->
+    <select id="getUserList" resultType="com.exam.domain.User">
+        SELECT id, `name`, password, age, tel, deleted, version
+        FROM
+            `tbl_user`
+        ORDER BY id desc
+        LIMIT #{offset},#{size}
+    </select>
+</mapper>

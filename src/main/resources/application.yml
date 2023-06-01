@@ -1,0 +1,27 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.108.30.116:3306/ssm_db
+    username: root
+    password: DVDefe567658ERRErffsahjkh
+    type: com.alibaba.druid.pool.DruidDataSource
+
+server:
+  port: 8088
+#logging:
+#  level:
+#    root: info
+# 开启MP的日志（）输出到控制台
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+    db-config:
+      id-type: assign_id
+      table-prefix: tbl_
+      logic-delete-field: deleted
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+  mapper-locations: classpath:/dao/*.xml
